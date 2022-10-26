@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            "motors = ros2_g1_tank.motorNode:main"
         ],
     },
 )
