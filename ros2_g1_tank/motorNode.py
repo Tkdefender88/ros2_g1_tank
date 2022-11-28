@@ -3,7 +3,7 @@ from rclpy.node import Node
 from gpiozero import LED
 from gpiozero import AngularServo 
 
-LED_R = 22
+LED_R = 22 
 LED_G = 27
 LED_B = 24
 
@@ -29,8 +29,6 @@ class Motors(Node):
 
     def setAngle(angle):
         servo.angle = angle
-
-
 
 def main(args=None):
     rclpy.init(args=args)
