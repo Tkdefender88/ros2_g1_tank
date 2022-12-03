@@ -10,6 +10,10 @@ from launch.launch_description_sources import PythonLaunchDescriptionSource
 from launch_ros.actions import Node
 
 def generate_launch_description():
+
+    
+
+
     return LaunchDescription([
         Node(
             package='v4l2_camera',
@@ -19,6 +23,15 @@ def generate_launch_description():
                 'image_size': [640, 480],
                 'camera_frame_id': 'camera_link_optical'
              }]
+        ),
+        Node(
+            package='image_transport',
+            executable='republish',
+            output='screen',
+            remappings=[
+                ('/in', '/image/raw'),
+                ('/out/compressed', '/output/raspberry_camera/compressed')
+            ]
         )
     ])
 
